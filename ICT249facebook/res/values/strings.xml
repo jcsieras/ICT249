@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ICT 249 Facebook</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="app_id">177024169135142</string>
+	<string name="app_secret">d3044921469c7ecd55ee8d25caf73bf0</string>
+</resources>
