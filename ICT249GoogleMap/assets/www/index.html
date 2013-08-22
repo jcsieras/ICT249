@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" type="text/css"
+	href="jquery/jquery.mobile-1.3.1.min.css" />
+<script type="text/javascript"
+	src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
+<script type="text/javascript" src="jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.mobile-1.3.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.mobile.utils.js"></script>
+<script type="text/javascript" src="jquery/ui/jquery.ui.map.js"></script>
+
+<!-- <script type="text/javascript" src="cordova.js"></script>-->
+<script type="text/javascript" src="js/gmap.js"></script>
+
+<title>PhoneGap</title>
+</head>
+<body>
+	<div id="home" data-role="page" data-fullscreen="true" data-theme="d">
+
+		<div data-role="header" data-theme="d">
+			<h1>Local Search</h1>
+		</div>
+
+		<div data-role="content" data-fullscreen="true">
+			<div data-role="fieldcontain">
+				<label for="search-basic">Local Search</label><input type="text"
+					name="search" id="query" value="Pizza" />
+			</div>
+
+			<div data-role="fieldcontain">
+				<label for="slider"> Search Range(kms): </label> <input type="range"
+					name="range" id="radius" value="5" min="1" max="25" />
+			</div>
+			<div data-role="fieldcontain">
+				<a href="#result-list" data-role="button" data-icon="search"
+					id="search-btn">Search</a>
+			</div>
+
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href="#result-list" id="fav" data-role="button" data-icon="home">Favorites</a> 
+				<a href="index.html" data-role="button" data-icon="info">About us</a>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="d"></div>
+	</div>
+	
+	<div id="result-list" data-role="page" data-fullscreen="true"
+		data-theme="d">
+		<div data-role="header" data-theme="d">
+			<a href="#home" data-role="button" data-icon="arrow-l" class="home-btn" data-transition="slide">Back</a>
+			<h1>Result</h1>
+		</div>
+
+		<div data-role="content" data-fullscreen="true">
+			<ul id="resultList" data-role="listview">
+			</ul>
+		</div>
+		<div data-role="footer" data-theme="d" class="ui-grid-a">
+			<a href="#" data-role="button" class="home-btn" data-transition="slide">List</a> 
+			<a href="#result-map" data-role="button" class="home-btn" data-transition="slide">Map</a>
+		</div>
+	</div>
+	
+	<div id="result-map" data-role="page" data-fullscreen="true"
+		data-theme="d">
+		<div data-role="header" data-theme="d">
+			<h1>Map</h1>
+		</div>
+
+		<div data-role="content" data-fullscreen="true">
+
+			<div class="ui-bar-c ui-corner-all ui-shadow"
+				style="padding: 1em; margin: 0 auto">
+				<div id="map_canvas" style="margin: 0 auto"></div>
+			</div>
+
+
+		</div>
+		<div data-role="footer" data-theme="d" class="ui-grid-a">
+			<a href="#result-list" data-role="button" class="home-btn"
+				data-transition="slide">List</a> <a href="#" data-role="button"
+				class="home-btn" data-transition="slide">Map</a>
+		</div>
+	</div>
+	<div id="details-page" data-role="page" data-fullscreen="true"
+		data-theme="d">
+		<div data-role="header" data-theme="d">
+			<a href="#result-list" data-role="button" data-icon="arrow-l"
+				class="home-btn" data-transition="slide">Back</a>
+			<h1>Business Details</h1>
+		</div>
+
+		<div data-role="content" data-fullscreen="true">
+			<div id="name"></div>
+			<div id="address"></div>
+			<div id="phone"></div>			
+			<div id="rating"></div>
+
+		
+			<a href="" data-role="button" id="addFave">Add Favorite</a>
+			<a href="" data-role="button" id="removeFave">Remove Favorite</a>
+
+		</div>
+		<div data-role="footer" data-theme="d"></div>
+	</div>
+</body>
+</html>
